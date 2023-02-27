@@ -1,6 +1,18 @@
 #include <iostream>
+#include "Game/Game.h"
+
+
 
 void main()
 {
-	std::cout << "Hola mundo";
+	Final_Tello::Game* newGame = new Final_Tello::Game();
+
+	if (newGame != nullptr)
+	{
+		newGame->Run();
+	}
+
+	delete newGame;
+
 }
+
