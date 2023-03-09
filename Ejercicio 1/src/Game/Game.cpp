@@ -1,18 +1,21 @@
 #include "iostream"
 #include "Game.h"
+#include "../Menu/Menu.h"
 
 namespace Final_Tello
 {
 	Game::Game()
 	{
-		Scene* sceneMenu = new Scene("Menu");
-		Scene* sceneGameplay = new Scene("Gameplay");
-		Scene* sceneGameOver = new Scene("GameOver");
+		levelController = new LevelController();
 
-		sceneManager = new SceneManager(sceneMenu);
+		//Scene* sceneMenu = new Menu(levelController);
+		//Scene* sceneGameplay = new Scene("Gameplay");
+		//Scene* sceneGameOver = new Scene("GameOver");
 
-		sceneManager->AddScene(sceneGameplay);
-		sceneManager->AddScene(sceneGameOver);
+		//sceneManager = new SceneManager(sceneMenu);
+
+		//sceneManager->AddScene(sceneGameplay);
+		//sceneManager->AddScene(sceneGameOver);
 
 	}
 	Game::~Game()
@@ -21,10 +24,12 @@ namespace Final_Tello
 	}
 	void Game::Run()
 	{
+
+		system("Title Final Programacion 2 - Tello Guido");
+
 		while (!gameShouldClose)
 		{
-			sceneManager->LoadScene(Scene_Name::MENU);
-			
+			/*
 			while (!sceneManager->GetCurrentScene()->SceneShouldEnd())
 			{
 				SceneManager::UpdateCurrentScene();
@@ -32,7 +37,7 @@ namespace Final_Tello
 			}
 
 			sceneManager->LoadScene(Scene_Name::GAMEOVER);
-
+			*/
 		}
 		
 	}

@@ -1,23 +1,33 @@
 #include "SceneManager.h"
+/*
+using namespace Final_Tello;
 
-Final_Tello::SceneManager::SceneManager(Scene* initialScene)
+::Scene* ::SceneManager::currentScene = nullptr;
+
+::SceneManager::SceneManager(Scene* initialScene)
 {
 	scenes.push_back(initialScene);
 	currentScene = initialScene;
+	nextScene = Scene_Name::MENU;
 }
 
-Final_Tello::SceneManager::~SceneManager()
+::SceneManager::~SceneManager()
 {
-	
+	int aux = scenes.size();
+	for (short i = 1; i <= aux; i++)
+	{
+		delete scenes[aux-i];
+		scenes.pop_back();
+	}
 }
 
-void Final_Tello::SceneManager::AddScene(Scene* newScene)
+void ::SceneManager::AddScene(Scene* newScene)
 {
 	scenes.push_back(newScene);
 }
 
 
-void Final_Tello::SceneManager::LoadScene(Scene_Name sceneToLoad)
+void ::SceneManager::LoadScene(Scene_Name sceneToLoad)
 {
 	if (static_cast<int>(sceneToLoad) >= Scene::GetScenesCount())
 	{
@@ -40,27 +50,49 @@ void Final_Tello::SceneManager::LoadScene(Scene_Name sceneToLoad)
 
 }
 
-void Final_Tello::SceneManager::ReloadScene()
+void ::SceneManager::ReloadScene()
 {
 	currentScene->Init();
 }
 
-Final_Tello::Scene* Final_Tello::SceneManager::GetCurrentScene()
+::Scene* ::SceneManager::GetCurrentScene()
 {
 	return currentScene;
 }
 
-void Final_Tello::SceneManager::UpdateCurrentScene()
+void SceneManager::SetNextScene(Scene_Name newNextScene)
+{
+	nextScene = newNextScene;
+}
+
+void SceneManager::LoadNextScene()
+{
+	currentScene->Deinit(); //Borro cualquier cosa adicional de la escena vieja
+
+	Scene** pointer = scenes.data(); //Me da el inicio del vector de escenas
+	currentScene = *(pointer + static_cast<int>(nextScene)); //Me muevo hasta la escena requerida.
+
+	currentScene->Init(); //Inicializo la nueva escena
+}
+
+void ::SceneManager::UpdateCurrentScene()
 {
 	currentScene->Update();
 }
 
-void Final_Tello::SceneManager::DrawCurrentScene()
+void ::SceneManager::DrawCurrentScene()
 {
-	currentScene->Draw();
+	if (currentScene->SceneShouldRedraw() || !currentScene->SceneJustDrawn())
+	{
+		system("CLS");
+		std::cout << "/// --- " << currentScene->GetDisplayName() << " --- \\\\\\" << std::endl;
+
+		currentScene->Draw();
+	}
 }
 
-void Final_Tello::SceneManager::DeinitCurrentScene()
+void ::SceneManager::DeinitCurrentScene()
 {
 	currentScene->Deinit();
 }
+*/

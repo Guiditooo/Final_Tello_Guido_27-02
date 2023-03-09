@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{286a588b-4c13-49a2-bd68-e85698cc6f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelController">
+      <UniqueIdentifier>{e6aa4469-d9dc-447c-9b99-76c5b26f21f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp" />
@@ -25,6 +31,12 @@
     <ClCompile Include="src\Scene\Scene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\Menu\Menu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LevelController\LevelController.cpp">
+      <Filter>LevelController</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game\Game.h">
@@ -36,8 +48,12 @@
     <ClInclude Include="src\Scene\Scene.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="src\Extras.h">
-      <Filter>Scene</Filter>
+    <ClInclude Include="src\Menu\Menu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Extras.h" />
+    <ClInclude Include="src\LevelController\LevelController.h">
+      <Filter>LevelController</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

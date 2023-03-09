@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "../SceneManager/SceneManager.h"
+#include "../LevelController/LevelController.h"
 
 namespace Final_Tello
 {
@@ -12,12 +13,10 @@ namespace Final_Tello
 		~Game();
 
 		void Run();
-		void StopRunning();
-
-		void Pause();
-		void UnPause();
+		void StopRunning(); //Mensaje de salir del juego
 	private:
-		SceneManager* sceneManager;
+		//SceneManager* sceneManager;
+		LevelController* levelController;
 	};
 
 }

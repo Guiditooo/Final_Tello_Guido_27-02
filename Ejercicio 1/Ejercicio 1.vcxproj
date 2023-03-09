@@ -140,13 +140,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Game\Game.cpp" />
+    <ClCompile Include="src\LevelController\LevelController.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Menu\Menu.cpp" />
     <ClCompile Include="src\SceneManager\SceneManager.cpp" />
     <ClCompile Include="src\Scene\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Extras.h" />
     <ClInclude Include="src\Game\Game.h" />
+    <ClInclude Include="src\LevelController\LevelController.h" />
+    <ClInclude Include="src\Menu\Menu.h" />
     <ClInclude Include="src\SceneManager\SceneManager.h" />
     <ClInclude Include="src\Scene\Scene.h" />
   </ItemGroup>

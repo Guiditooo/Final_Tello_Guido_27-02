@@ -3,14 +3,17 @@
 
 namespace Final_Tello
 {
-	
+/*
 	int Scene::sceneCount = 0;
 
-	Scene::Scene(string newName)
+	Scene::Scene(LevelController* newLevelController, string newName)
 	{
 		displayName = newName;
+		levelController = newLevelController;
 		sceneCount++;
 		shouldEnd = false;
+		shouldRedraw = false;
+		justDrawn = false;
 	}
 
 	Scene::~Scene() 
@@ -24,11 +27,12 @@ namespace Final_Tello
 
 	void Scene::Update()
 	{
+
 	}
 
 	void Scene::Draw()
-	{
-		std::cout << "///" << displayName << "\\\\\\" << std::endl;
+	{	
+		DrawCheck();
 	}
 
 	void Scene::Deinit()
@@ -45,9 +49,37 @@ namespace Final_Tello
 		return id;
 	}
 
+	string Scene::GetDisplayName()
+	{
+		return displayName;
+	}
+
 	bool Scene::SceneShouldEnd()
 	{
 		return shouldEnd;
 	}
 
+	bool Scene::SceneJustDrawn()
+	{
+		return justDrawn;
+	}
+
+	bool Scene::SceneShouldRedraw()
+	{
+		return shouldRedraw;
+	}
+
+	void Scene::DrawCheck()
+	{
+		if (!justDrawn)
+		{
+			justDrawn = true;
+		}
+	}
+
+	void Scene::SetRedraw()
+	{
+		shouldRedraw = true;
+	}
+	*/
 }
